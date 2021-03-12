@@ -1,4 +1,59 @@
-<h4 class="font-weight-bold">My watchlist <span class="text-black"><fa-icon [icon]="startIcon"></fa-icon></span></h4>
-<div class="text-muted font-weight-bold">
-  <p> <span style="font-style: italic;">Your watch list is empty.</span> Build your watchlist by starring(<span class="text-primary"><fa-icon [icon]="startIcon"></fa-icon></span>) the stocks you want to follow. </p>
+<h4 class="font-weight-bold">My watchlist <span class="text-black">
+    <fa-icon [icon]="startIcon"></fa-icon>
+  </span></h4>
+<div class="text-muted font-weight-bold"
+  *ngIf="manager.watchList.sectors.length < 1 && manager.watchList.stocks.length < 1">
+  <p> <span style="font-style: italic;">Your watch list is empty.</span> Build your watchlist by starring(<span
+      class="text-primary">
+      <fa-icon [icon]="startIcon"></fa-icon>
+    </span>) the stocks you want to follow. </p>
+</div>
+
+<div *ngIf="manager.watchList.sectors.length > 0 || manager.watchList.sectors.length > 0">
+  <h5 class="font-weight-bold">Sectors</h5>
+  <table class="table table-sm  table-borderless">
+    <thead class=" border-bottom">
+      <tr class="text-muted">
+        <th class="p-0" scope="col">Name</th>
+        <th class="p-0 text-right" scope="col">Open</th>
+        <th class="p-0 text-right" scope="col">Close</th>
+        <th class="p-0 text-right" scope="col">High</th>
+        <th class="p-0 text-right" scope="col">Low</th>
+        <th class="p-0 text-right" scope="col">Volume</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of manager.watchList.sectors">
+        <td class="font-weight-bold">{{ item.sectorname }}</td>
+        <td class="text-right">{{ item.gains }}</td>
+      </tr>
+    </tbody>
+    <tfoot *ngIf="manager.watchList.stocks.length < 1">
+      <small class="text-muted">There are no stcoks on your watchlist</small>
+    </tfoot>
+  </table>
+</div>
+<div *ngIf="manager.watchList.sectors.length > 0 || manager.watchList.stocks.length > 0">
+  <h5 class="font-weight-bold">Stocks</h5>
+  <table class="table table-sm  table-borderless">
+    <thead class=" border-bottom">
+      <tr class="text-muted">
+        <th class="p-0" scope="col">Symbol</th>
+        <th class="p-0 text-right" scope="col">Open</th>
+        <th class="p-0 text-right" scope="col">Close</th>
+        <th class="p-0 text-right" scope="col">High</th>
+        <th class="p-0 text-right" scope="col">Low</th>
+        <th class="p-0 text-right" scope="col">Volume</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of manager.watchList.stocks">
+        <td class="font-weight-bold">{{ item.code }}</td>
+        <td class="text-right">{{ item.gains }}</td>
+      </tr>
+    </tbody>
+    <tfoot *ngIf="manager.watchList.stocks.length < 1">
+      <small class="text-muted">There are no stcoks on your watchlist</small>
+    </tfoot>
+  </table>
 </div>

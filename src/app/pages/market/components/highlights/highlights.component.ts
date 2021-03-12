@@ -9,12 +9,12 @@ import { SectorItem } from 'src/app/common/interfaces';
 export class HighlightsComponent implements OnInit {
   public sectors:Array<SectorItem> = [
     {
-      image : '',
+      image : 'assets/images/healthcare.png',
       sectorname :'Health Care',
       gains : 0.46
     },
     {
-      image : '',
+      image : 'assets/images/industrial.jpg',
       sectorname :'Industrials',
       gains : -0.78
     }

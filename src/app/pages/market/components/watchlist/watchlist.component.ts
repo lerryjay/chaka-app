@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { ManagerService } from 'src/app/services/manager.service';
 
 
 
@@ -10,9 +11,11 @@ import { faStar } from '@fortawesome/free-solid-svg-icons';
 })
 export class WatchlistComponent implements OnInit {
   public startIcon = faStar;
-  constructor() { }
+  constructor( public manager : ManagerService) { }
 
   ngOnInit(): void {
   }
+
+  
 
 }
