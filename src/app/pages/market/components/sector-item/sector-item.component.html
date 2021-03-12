@@ -1,0 +1,7 @@
+<div class="card bg-dark text-white ">
+  <img [src]="_image" class="card-img" alt="..." height="150px">
+  <div class="card-img-overlay d-flex align-content-between w-100 h-100">
+    <h5 class="card-title w-100 font-weight-bold">{{ _sectorname }}</h5>
+    <p class="card-text mt-auto ml-auto text-right w-100" ><span [ngClass]="_gains == 0 ? 'badge badge-light bg-transparent text-light font-weight-bolder p-2' :  _gains > 0 ? 'badge badge-success font-weight-bolder p-2' : 'badge badge-danger font-weight-bolder p-2' " style="font-size: 1.0rem;"> {{ _gains > 0  ? '+'+ _gains.toFixed(2) : _gains.toFixed(2)   }}%</span></p>
+  </div>
+</div>

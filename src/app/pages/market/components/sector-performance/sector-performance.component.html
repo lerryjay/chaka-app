@@ -1,0 +1,7 @@
+<h4 class="font-weight-bold mb-0">Sector Performance</h4>
+<small class="text-muted">Dec 29, 2020 09:10:36pm</small>
+<div class="row">
+  <div  *ngFor="let item of sectors; let i = index" [ngClass]=" sectors.length % 4 == 3 && sectors.length  - i < 4  ? 'col-md-4 mt-4' :   (sectors.length % 4 == 2 && sectors.length  - i < 3) ?  'col-md-6 mt-4' : (sectors.length % 4 == 1 && sectors.length  - i < 2) ?  'col-md-12 mt-4' :  'col-md-3 mt-4' ">
+    <SectorItem [gains]="item.gains" [image]="item.image" [sectorname]="item.sectorname"></SectorItem>
+  </div>
+</div>

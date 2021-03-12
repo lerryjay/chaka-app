@@ -1,0 +1,18 @@
+<h4 class="font-weight-bold">Ex Dividends</h4>
+<table class="table table-sm  table-borderless">
+  <thead class=" border-bottom">
+    <tr class="text-muted">
+      <th class="p-0" scope="col">Symbol</th>
+      <th class="p-0" scope="col">Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of dividends">
+      <td>{{  item.symbol }}</td>
+      <td>{{  item.amount }}</td>
+    </tr>
+  </tbody>
+  <tfoot *ngIf="dividends.length < 1">
+    <small class="text-muted">There are no upcoming dividends</small>
+  </tfoot>
+</table>

@@ -1,0 +1,7 @@
+<h4 class="font-weight-bold mb-0">Sector Highlights</h4>
+<small class="text-muted">Dec 29, 2020 09:10:28pm</small>
+<div class="row mt-3">
+  <div class="col-md-6 mb-3" *ngFor="let item of sectors">
+    <SectorItem [gains]="item.gains" [image]="item.image" [sectorname]="item.sectorname"></SectorItem>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<h1 class="font-weight-bolder">Today's market briefing</h1>
+
+<div class="row">
+  <div class="card-deck">
+    <div *ngFor="let item of stocks" (click)="toggleWatchList(item)" class="card p-0 bg-light border border-light mr-2 mb-2" style="width: 140px;height: 220px;">
+      <div class="card-body p-3">
+        <h5 class="card-title font-weight-bolder mb-0">{{ item.code }}</h5>
+        <small class="card-text text-muted font-weight-bold">{{ item.name }}</small>
+        
+      </div>
+      <div class="card-footer p-3 bg-light border border-light pb-3 text-right">
+        <h5 class="card-title font-weight-bolder mb-0">{{ item.value }}</h5>
+        <small [ngClass]="item.gains > 0  ? 'card-text text-success' : 'card-text text-danger'">{{ item.gains }}%.</small>
+      </div>
+    </div>
+  </div>
+</div>
+<small class="text-muted text-small mt-3">Active stocks last updated Dec. 29, 2020</small>
