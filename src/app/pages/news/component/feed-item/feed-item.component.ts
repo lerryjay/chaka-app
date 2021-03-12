@@ -8,6 +8,12 @@ import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
 export class FeedItemComponent implements OnInit {
 
   @Input()
+  get image(): string { return this._image; }
+  set image(image: string) {
+    this._image = (image && image.trim()) || '<no name set>';
+  }
+
+  @Input()
   get title(): string { return this._title; }
   set title(title: string) {
     this._title = (title && title.trim()) || '<no name set>';
@@ -41,6 +47,7 @@ export class FeedItemComponent implements OnInit {
   public _date = '';
   public _source = '';
   public _description = '';
+  public _image = '';
   public _tags: Array<String> = [];
 
   constructor() { }
